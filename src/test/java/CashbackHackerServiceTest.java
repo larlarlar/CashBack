@@ -1,19 +1,18 @@
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
 
 public class CashbackHackerServiceTest {
     CashbackHackerService service = new CashbackHackerService();
 
-@Test
-public void shouldAdviceHundred() {
-    assertEquals(service.remain(900),100);
-}
+    @Test
+    public void shouldAdviceHundred() {
+        Assert.assertEquals(100, service.remain(900));
+    }
 
 
     @Test
     public void shouldnotAdvice() {
-
-    assertEquals(service.remain(1000),0);
+        Assert.assertEquals(0, service.remain(1000));
     }
 }
